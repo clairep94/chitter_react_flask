@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post / Y</title>
+</head>
+<body>
+
+    <h1><a href="/home">Home</a></h1>
+    <a href="/new_post">New post</a><br>
+    <a href="/your_account">Your account</a><br>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign out">
+    </form>
+
+    <br>
+    <h1>Create Post</h1>
+    <p><b>Claire</b> @testuser111 says:</p>
+    <form action="/posts" method="post">
+
+        <!-- We check to see if there are any errors from a previous submission -->
+        {% if errors %}
+            <!-- If so, we show them. -->
+            <p class="t-errors">
+                There were errors with your submission: {{ errors }}
+            </p>
+        {% endif %}
+
+        <p>
+            <label for="post_content"></label>
+            <input type="text" name="post_content" id="post_content">
+        </p>
+        <p>
+            <input type="submit" value="Create Post">
+        </p>
+    </form>
+    <br>
+
+
+</body>
+</html>

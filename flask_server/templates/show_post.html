@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post / Y</title>
+</head>
+<body>
+
+    <h1><a href="/home">Home</a></h1>
+    <a href="/posts/new">New post</a><br>
+    <a href="/your_account">Your account</a><br>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign out">
+    </form>
+
+    <br>
+    <h2>Post</h2>
+
+    <a href="/posts/1"><b>Claire</b> @testuser111 <i>- 8h ago</i><br></a>
+    This is my second chweet.<br>
+    6 upvotes
+    <form action="/posts/1/upvote" method="post">
+        <input type="submit" value="Upvote">
+    </form>
+    <form action="/posts/1/downvote" method="post">
+        <input type="submit" value="Downvote">
+    </form>
+    <form action="/posts/1/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+
+    
+    <h3>Comments</h3>
+    <ul>
+        <!-- POST 1 - COMMENT 1 -->
+        <li>
+            <a href="/posts/1/comments/1"><b>Claire</b> @testuser111 <i>- 6h ago</i><br></a>
+            This is my first comment.<br>
+            0 upvotes
+            <form action="/post/1/comments/1/upvote/" method="post">
+                <input type="submit" value="Upvote">
+            </form>
+            <form action="/posts/1/comments/1/downvote/" method="post">
+                <input type="submit" value="Downvote">
+            </form>
+            <form action="/posts/1/delete" method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+        <br>
+        <!-- POST 1 - COMMENT 1 -->
+        <!-- POST 1 - COMMENT 2 -->
+        <li>
+            <a href="/posts/1/comments/1"><b>Claire</b> @testuser111 <i>- 6h ago</i><br></a>
+            This is my second comment.<br>
+            0 upvotes
+            <form action="/posts/1/comments/2/upvote" method="post">
+                <input type="submit" value="Upvote">
+            </form>
+            <form action="/posts/1/comments/2/downvote" method="post">
+                <input type="submit" value="Downvote">
+            </form>
+            <form action="/posts/1/delete" method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+        <!-- POST 1 - COMMENT 2 -->
+    </ul>
+    
+    <br>
+    <h3>New Comment</h3>
+    <p><b>Claire</b> @testuser111 says:</p>
+    <form action="/posts/1/comments" method="post">
+
+        <!-- We check to see if there are any errors from a previous submission -->
+        {% if errors %}
+            <!-- If so, we show them. -->
+            <p class="t-errors">
+                There were errors with your submission: {{ errors }}
+            </p>
+        {% endif %}
+
+        <p>
+            <label for="comment_content"></label>
+            <input type="text" name="comment_content" id="comment_content">
+        </p>
+        <p>
+            <input type="submit" value="Create Comment">
+        </p>
+    </form>
+    <br>
+
+
+
+</body>
+</html>

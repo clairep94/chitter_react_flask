@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home / Y</title>
+</head>
+<body>
+
+    <h1><a href="/home">Home</a></h1>
+    <a href="/posts/new">New post</a><br>
+    <a href="/your_account">Your account</a><br>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign out">
+    </form>
+
+    <br>
+    <h2>Create Post</h2>
+    <p><b>Claire</b> @testuser111 says:</p>
+    <form action="/posts" method="post">
+
+        <!-- We check to see if there are any errors from a previous submission -->
+        {% if errors %}
+            <!-- If so, we show them. -->
+            <p class="t-errors">
+                There were errors with your submission: {{ errors }}
+            </p>
+        {% endif %}
+
+        <p>
+            <label for="post_content"></label>
+            <input type="text" name="post_content" id="post_content">
+        </p>
+        <p>
+            <input type="submit" value="Create Post">
+        </p>
+    </form>
+    <br>
+
+
+
+
+    <h2>All Posts</h2>
+
+
+    <!-- {% for chweet in chweets %}
+    <b>{{chweet.user.name}}</b> @{{chweet.user.handle}} <i>- Xh ago</i><br>
+    {{chweet.content}}<br>
+    {{chweet.votes}} upvotes
+    <br>
+    <br>
+    <!-- ADD BUTTON FOR HEART -->
+    <!-- {% endfor %} -->
+
+    <!-- TESTER FOR FORMATTING: -->
+    <ul>
+        <li>
+            <!-- POST 1 THREAD -->
+            <a href="/posts/1"><b>Claire</b> @testuser111 <i>- 8h ago</i><br></a>
+            This is my second chweet.<br>
+            6 upvotes
+            <form action="/posts/1/upvote" method="post">
+                <input type="submit" value="Upvote">
+            </form>
+            <form action="/posts/1/downvote" method="post">
+                <input type="submit" value="Downvote">
+            </form>
+            <form action="/posts/1/delete" method="post">
+                <input type="submit" value="Delete">
+            </form>
+
+            <!-- POST 1 -->
+            <br>
+            <!-- POST 1 - COMMENTS -->
+            <ul>
+                <!-- POST 1 - COMMENT 1 -->
+                <li>
+                    <a href="/posts/1/comments/1"><b>Claire</b> @testuser111 <i>- 6h ago</i><br></a>
+                    This is my first comment.<br>
+                    0 upvotes
+                    <form action="/post/1/comments/1/upvote/" method="post">
+                        <input type="submit" value="Upvote">
+                    </form>
+                    <form action="/post/1/comments/1/downvote/" method="post">
+                        <input type="submit" value="Downvote">
+                    </form>
+                    <form action="/posts/1/comments/1/delete" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                </li>
+                <br>
+                <!-- POST 1 - COMMENT 1 -->
+                <!-- POST 1 - COMMENT 2 -->
+                <li>
+                    <a href="/posts/1/comments/2"><b>Claire</b> @testuser111 <i>- 6h ago</i><br></a>
+                    This is my second comment.<br>
+                    0 upvotes
+                    <form action="/posts/1/comments/2/upvote" method="post">
+                        <input type="submit" value="Upvote">
+                    </form>
+                    <form action="/posts/1/comments/2/downvote" method="post">
+                        <input type="submit" value="Downvote">
+                    </form>
+                    <form action="/posts/1/comments/2/delete" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+
+                </li>
+                <!-- POST 1 - COMMENT 2 -->
+            </ul>
+
+        </li>
+        <br>
+        <br>
+
+        <li>
+            <a href="/posts/2"><b>Claire</b> @testuser111 <i>- 12h ago</i><br></a>
+            This is my first chweet.<br>
+            3 upvotes
+            <form action="/posts/2/upvote" method="post">
+                <input type="submit" value="Upvote">
+            </form>
+            <form action="/posts/2/downvote" method="post">
+                <input type="submit" value="Downvote">
+            </form>
+            <form action="/posts/2/delete" method="post">
+                <input type="submit" value="Delete">
+            </form>
+
+        </li>
+        <br>
+        <br>
+    <!-- TESTER FOR FORMATTING: -->
+    
+    </ul>
+    <br>
+    <br>
+
+</body>
+</html>

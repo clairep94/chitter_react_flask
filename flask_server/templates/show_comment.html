@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment / Y</title>
+</head>
+<body>
+
+    <h1><a href="/home">Home</a></h1>
+    <a href="/posts/new">New post</a><br>
+    <a href="/your_account">Your account</a><br>
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign out">
+    </form>
+
+    <br>
+    <h2>Comment</h2>
+
+    <a href="/posts/1/comments/1"><b>Claire</b> @testuser111 <i>- 6h ago</i><br></a>
+    This is my first comment.<br>
+    0 upvotes
+    <form action="/posts/1/comments/1/upvote/" method="post">
+        <input type="submit" value="Upvote">
+    </form>
+    <form action="/posts/1/comments/1/downvote/" method="post">
+        <input type="submit" value="Downvote">
+    </form>
+    <form action="/posts/1/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+
+
+    
+    <h3>Parent Post</h3>
+
+    <a href="/posts/1"><b>Claire</b> @testuser111 <i>- 8h ago</i><br></a>
+    This is my second chweet.<br>
+    6 upvotes
+    <form action="/posts/1/upvote" method="post">
+        <input type="submit" value="Upvote">
+    </form>
+    <form action="/posts/1/downvote" method="post">
+        <input type="submit" value="Downvote">
+    </form>
+    <form action="/posts/1/delete" method="post">
+        <input type="submit" value="Delete">
+    </form>
+
+</body>
+</html>
