@@ -19,3 +19,63 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+
+
+
+/* styles.css */
+.gig-box {
+  background-color: #f5f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  width: 50vw; /* Initial width as a percentage of viewport width */
+  max-width: 600px; /* Maximum width */
+  min-width: 100px; /* Minimum width */
+  margin-bottom: 10px; /* 10px gap between boxes */
+  position: relative;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+.gig-date {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.gig-location {
+  font-weight: bold;
+}
+
+/* Hover styles */
+.gig-box:hover {
+  background-color: #dfdfdf; /* Change color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+.like-button,
+.show-favourites-button {
+  background-color: #d0cece;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  max-width: 100px;
+  width: 50%;
+}
+
+.show-favourites-button{
+  max-width: 200px;
+  width: 50%;
+  margin: 20px
+}
+
+.like-button.liked,
+.show-favourites-button.favourites {
+  background-color: #333;
+  color: #fff;
+}
+
