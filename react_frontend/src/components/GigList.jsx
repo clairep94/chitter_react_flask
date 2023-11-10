@@ -6,7 +6,7 @@ function GigList() {
     const [showFavourites, setShowFavourites] = useState(false);
 
     useEffect(() => {
-        const URL = 'http://127.0.0.1:5000/posts';
+        const URL = 'http://127.0.0.1:5001/posts';
       
         fetch(URL)
           .then((res) => res.json())
@@ -30,8 +30,8 @@ function GigList() {
                 {showFavourites ? "Show All" : "Show Favourites"}
             </button>
             <div className="gigs">
-                {gigs.map((gigData) => (
-                <Gig key={gigData.event_id} data={gigData} />
+                {gigs.map((gigData, index) => (
+                <Gig key={index} data={gigData} />
                 ))}
             </div>
             </>
